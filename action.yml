@@ -1,7 +1,8 @@
 name: "Campsite GitHub Action"
 description: "Create a post or comment on Campsite from your GitHub workflow."
-icon: message-circle
-color: orange
+branding:
+  icon: 'message-circle'
+  color: 'orange'
 inputs:
   api_key:
     description: "Campsite API Key"
