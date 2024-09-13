@@ -1,16 +1,21 @@
 # Campsite GitHub Action
 
-This GitHub Action allows you to create posts, comments, or messages on Campsite directly from your GitHub workflow. It's perfect for automating updates, sharing build statuses, or notifying your team about important events in your deployment workflows.
+This GitHub Action allows you to create posts, comments, or messages on [Campsite](https://campsite.com) directly from your GitHub workflow. It's perfect for automating updates, sharing build statuses, or notifying your team about important events in your deployment workflows.
 
 ## Usage
 
-To use this action in your workflow, you need to set up the necessary inputs. Here are some examples:
+You will need an API key to use this action. Follow these steps to create an API key in Campsite:
+
+1. Go to your Organization settings and click the **Integrations** tab.
+2. In the **API keys** box, click the **+ New** button and enter a name for your integration.
+3. After you create the app, copy the API key that appears.
+4. Create a [GitHub secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) with the value as the API key you just created. We use `CAMPSITE_API_KEY` in the examples below, but you can use any name you want.
 
 ### Create a post
 
 ```yml
 - name: Create Campsite Post
-  uses: campsite/campsite-github-action@v1
+  uses: campsite/campsite-github-action@v0.1.0
   with:
     api_key: ${{ secrets.CAMPSITE_API_KEY }}
     action_type: create_post
@@ -23,7 +28,7 @@ To use this action in your workflow, you need to set up the necessary inputs. He
 
 ```yml
 - name: Add Deployment Status Comment
-  uses: campsite/campsite-github-action@v1
+  uses: campsite/campsite-github-action@v0.1.0
   with:
     api_key: ${{ secrets.CAMPSITE_API_KEY }}
     action_type: "create_comment"
@@ -43,7 +48,7 @@ To use this action in your workflow, you need to set up the necessary inputs. He
 
 ```yml
 - name: Send Campsite Message
-  uses: campsite/campsite-github-action@v1
+  uses: campsite/campsite-github-action@v0.1.0
   with:
     api_key: ${{ secrets.CAMPSITE_API_KEY }}
     action_type: create_message
@@ -88,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create Campsite Post
-        uses: campsite/campsite-github-action@v1
+        uses: campsite/campsite-github-action@v0.1.0
         with:
           api_key: ${{ secrets.CAMPSITE_API_KEY }}
           action_type: "create_post"
