@@ -1,0 +1,40 @@
+name: "campsite-github-action"
+description: "Create a post or comment on Campsite from your GitHub workflow"
+inputs:
+  api_key:
+    description: "Campsite API Key"
+    required: true
+  action_type:
+    description: "Action type ('create_post', 'create_comment', or 'create_message')"
+    required: true
+    default: "create_post"
+  content:
+    description: "Content of the post or comment"
+    required: true
+  title:
+    description: "Title of the post (required for posts)"
+    required: false
+  channel_id:
+    description: "Channel ID for the post (required for posts)"
+    required: false
+  post_id:
+    description: "Post ID for the comment (required for comments)"
+    required: false
+  parent_id:
+    description: "Parent comment ID for replies (optional)"
+    required: false
+  thread_id:
+    description: "Thread ID for the message (required for messages)"
+    required: false
+outputs:
+  post_id:
+    description: "ID of the post (if creating a post)"
+  post_url:
+    description: "URL of the post (if creating a post)"
+  comment_id:
+    description: "ID of the comment (if creating a comment)"
+  message_id:
+    description: "ID of the message (if creating a message)"
+runs:
+  using: "node20"
+  main: "dist/index.js"
