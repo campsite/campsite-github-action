@@ -15,7 +15,7 @@ You will need an API key to use this action. Follow these steps to create an API
 
 ```yml
 - name: Create Campsite Post
-  uses: campsite/campsite-github-action@v0.1.0
+  uses: campsite/campsite-github-action@v1.0.0
   with:
     api_key: ${{ secrets.CAMPSITE_API_KEY }}
     action_type: create_post
@@ -28,7 +28,7 @@ You will need an API key to use this action. Follow these steps to create an API
 
 ```yml
 - name: Add Deployment Status Comment
-  uses: campsite/campsite-github-action@v0.1.0
+  uses: campsite/campsite-github-action@v1.0.0
   with:
     api_key: ${{ secrets.CAMPSITE_API_KEY }}
     action_type: "create_comment"
@@ -48,7 +48,7 @@ You will need an API key to use this action. Follow these steps to create an API
 
 ```yml
 - name: Send Campsite Message
-  uses: campsite/campsite-github-action@v0.1.0
+  uses: campsite/campsite-github-action@v1.0.0
   with:
     api_key: ${{ secrets.CAMPSITE_API_KEY }}
     action_type: create_message
@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create Campsite Post
-        uses: campsite/campsite-github-action@v0.1.0
+        uses: campsite/campsite-github-action@v1.0.0
         with:
           api_key: ${{ secrets.CAMPSITE_API_KEY }}
           action_type: "create_post"

@@ -1,6 +1,6 @@
 {
 	"name": "campsite-github-action",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Create content in Campsite from your GitHub Actions workflow.",
 	"main": "dist/index.js",
 	"scripts": {
